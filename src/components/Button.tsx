@@ -1,5 +1,4 @@
 interface Props {
-  type: string
   color?:
     | "primary"
     | "secondary"
@@ -11,10 +10,10 @@ interface Props {
     | "dark"
   onClick: () => void
 }
-const Button = ({ type, onClick, color = "primary" }: Props) => {
+const Button = ({ color, onClick }: Props) => {
   return (
     <button className={"btn btn-" + color} onClick={onClick}>
-      {type.charAt(0).toUpperCase() + type.slice(1)}
+      My button
     </button>
   )
 }

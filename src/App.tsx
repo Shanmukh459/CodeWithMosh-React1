@@ -1,26 +1,16 @@
+import { useState } from "react"
+import Alert from "./components/Alert"
 import Button from "./components/Button"
 
 function App() {
-  // const items = ["New York", "San Francisco", "London", "Tokyo", "Paris"]
-  // const handleSelectItem = (item: string) => {
-  //   console.log(item)
-  // }
-  const buttonTypes = [
-    "primary",
-    "secondary",
-    "success",
-    "danger",
-    "warning",
-    "info",
-    "light",
-    "dark",
-  ]
+  const [showAlert, setShowAlert] = useState(false)
 
   return (
     <div>
-      {buttonTypes.map((type) => (
-        <Button key={type} type={type} onClick={() => console.log("Clicked")} />
-      ))}
+      {showAlert && (
+        <Alert onClose={() => setShowAlert(false)}>Hello World!</Alert>
+      )}
+      <Button color="primary" onClick={() => setShowAlert(true)} />
     </div>
   )
 }
