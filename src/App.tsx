@@ -1,10 +1,10 @@
-import Button from "./components/Button/Button"
+import Like from "./components/Like"
 
 function App() {
   const items = ["New York", "San Francisco", "Los Angeles"]
   return (
     <div>
-      <Button color="primary" onClick={() => console.log("Clicked!")} />
+      <Like onClick={() => console.log("Clicked")} />
     </div>
   )
 }
